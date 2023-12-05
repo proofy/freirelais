@@ -1,6 +1,6 @@
-# Saltivka
+# Freirelais
 
-![Saltivka](/app/assets/images/screenshot.png)
+![Freirelais](/app/assets/images/screenshot.png)
 
 This is an implementation of the [Nostr protocol](https://github.com/nostr-protocol/nostr) server (Nostr Relay) in Ruby. It implements the following list of specifications (Nostr Implementation Possibilities or NIPs):
 
@@ -44,13 +44,13 @@ Some thoughts and hints on production deployment may be found [here](/docs/DEPLO
 2. Local setup for development and contributions
 
 * TBD: link to the guide on how to deploy to managed cloud environment
-* Live instance could be found at [https://saltivka.org](https://saltivka.org) and relay address is `wss://saltivka.org`
+* Live instance could be found at [https://freirelais.serinty.net](https://freirelais.serinty.net) and relay address is `wss://freirelais.serinty.net`
 
 ## Docker Compose (demo)
 1. Prepare a host with docker environment installed (something like [this](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04)). Demo setup expects approximately 8 GB of RAM and 4vCPU
 2. SSH into this host
-3. ```git clone https://github.com/viktorvsk/saltivka.git```
-4. ```cd saltivka```
+3. ```git clone https://github.com/proofy/freirelais.git```
+4. ```cd freirelais```
 5. ```docker-compose -f demo/docker-compose.yml up --build```
 
 That's it! Wait a minute or two until database is ready. Now you should have HTTP/WS server available at `localhost:3000` and HTTPS/WSS at `localhost:2402`. Ensure ports are open on your server. Both commands should work and let you start working with Nostr:
@@ -62,8 +62,8 @@ That's it! Wait a minute or two until database is ready. Now you should have HTT
 ## Ruby (development)
 It's a typical Ruby on Rails application so all defaults mostly apply.
 
-1. ```git clone https://github.com/viktorvsk/saltivka.git```
-2. ```cd saltivka```
+1. ```git clone https://github.com/proofy/freirelais.git```
+2. ```cd freirelais```
 3. ```cp .env.example .env.development``` Copy default settings to development environment
 4. ```cp .env.test.example .env.test``` Copy default settings to test environment
 5. ```docker-compose -f local_dev/docker-compose.yml up``` run PostgreSQL on port `5432`, RedisStack on port `6379`, Redis (for Sidekiq) on port `63790`. **This step is optional if you prefer running those dependencies in a different way**
